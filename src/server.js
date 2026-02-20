@@ -13,6 +13,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
+// Root Route Redirect
+app.get('/', (req, res) => {
+    res.redirect('/register.html');
+});
+
 // Registration Route
 app.post('/api/register', async (req, res) => {
     const { uuid, username, password, email, phone, role } = req.body;
@@ -88,6 +93,10 @@ app.get('/api/balance', verifyToken, async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Server running on http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;
