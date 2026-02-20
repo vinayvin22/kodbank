@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Kodbank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="auth-container" style="max-width: 500px;">
+        <h1>Dashboard</h1>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Manage your accounts and finances
+            with premium security.</p>
+
+        <div style="display: flex; gap: 1rem; flex-direction: column;">
+            <button id="check-balance-btn">Check Balance</button>
+        </div>
+
+        <div id="balance-display">
+            Your balance is:
+            <span class="balance-amount" id="balance-val">$0.00</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

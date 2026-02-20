@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Kodbank</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+</head>
+<body>
+    <div class="auth-container">
+        <h1>Join Kodbank</h1>
+        <form id="register-form">
+            <input type="hidden" id="uuid" name="uuid">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required placeholder="Choose a username">
+            </div>
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Minimum 8 characters">
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+1 234 567 890">
+            </div>
+            <div class="input-group">
+                <label for="role">Account Role</label>
+                <select id="role" name="role" required>
+                    <option value="customer" selected>Customer</option>
+                </select>
+            </div>
+            <button type="submit">Create Account</button>
+        </form>
+        <p class="link-text">Already have an account? <a href="login.html">Sign In</a></p>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Pre-generate UUID for the user
+        document.getElementById('uuid').value = uuidv4();
+    </script>
+</body>
+</html>
